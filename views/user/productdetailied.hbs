@@ -1,0 +1,885 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/css/homestyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/3.0.8/elevatezoom.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.rawgit.com/igorlino/elevatezoom-plus/1.1.6/src/jquery.ez-plus.js"></script>
+
+    <style>
+        .na {
+            background: black;
+
+        }
+
+        .main-body {
+            background-image: url('/img/wp7381941.jpg');
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #212529;
+        }
+
+        .navbar .nav-link {
+            color: white !important;
+            /* Ensures links are white */
+        }
+
+        .navbar-toggler-icon {
+            background-color: white;
+            /* Makes the toggle button icon white */
+        }
+
+        .custom-form {
+            background-color: rgba(0, 0, 0, 0.8);
+            /* Semi-transparent background for the form */
+            padding: 20px;
+            border-radius: 10px;
+            /* Rounded corners */
+        }
+
+        @media (max-width: 576px) {
+
+            /* For small screens */
+            .custom-form {
+                width: 90%;
+                /* Adjust width as needed */
+                min-height: 400px;
+                /* Set a minimum height if necessary */
+            }
+        }
+
+        .text {
+            color: white;
+            font-weight: bolder;
+        }
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.rawgit.com/igorlino/elevatezoom-plus/1.1.6/src/jquery.ez-plus.js"></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar na navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white ms-2 head-logo" href="#">
+                <img src="/img/download copy.png" alt="Logo" width="40" height="34"
+                    class="d-inline-block align-text-top"> TimeHaven
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/user/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/user/shop">Shopping</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Contact Us</a>
+                    </li>
+                </ul>
+
+                <div class="d-flex align-items-center">
+                    <a href="#" class="text-white ms-3">
+                        <i class="bi bi-search"></i>
+                    </a>
+                    <a href="/user/wishlist" class="text-white ms-3">
+                        <i class="bi bi-heart"></i>
+                    </a>
+                    <a href="/user/cart/{{userid}}" class="text-white ms-3">
+                        <i class="bi bi-cart"></i>
+                    </a>
+                    <a href="/user/profile" class="text-white ms-3">
+                        <i class="bi bi-person"></i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        .card {
+            width: 100%;
+            /* Ensure card takes full width */
+            overflow: hidden;
+            /* Hide any overflow from the image */
+            margin: 0;
+            /* Remove any default margin */
+        }
+
+        .card img {
+            width: 100%;
+            /* Full width image */
+            height: auto;
+            /* Maintain aspect ratio */
+            max-height: 200px;
+            /* Set a max height for images */
+            object-fit: cover;
+            /* Crop the image to cover the card */
+        }
+
+        .price-tag {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            /* Adjust size as needed */
+            font-weight: 700;
+            /* Bold */
+            color: #1a0b0b;
+
+        }
+
+        .price-tag2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+
+            font-weight: 700;
+
+            color: #333;
+
+        }
+
+        .card {
+            transition: box-shadow 0.3s ease;
+            /* Smooth transition for the shadow */
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* Shadow effect on hover */
+        }
+
+        .btn-shadow {
+            transition: box-shadow 0.3s ease;
+            /* Smooth transition for the shadow */
+        }
+
+        .btn-shadow:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* Shadow effect on hover */
+        }
+
+        /* Responsive layout */
+        @media (max-width: 576px) {
+            .card {
+                height: auto;
+                /* Allow card height to adjust based on content */
+            }
+        }
+
+        .description-rating {
+            padding: 10px;
+            background-color: #f8f9fa;
+            /* Light background */
+            border-radius: 8px;
+            max-width: 90%;
+            /* Center alignment */
+            margin: auto;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 767px) {
+            .carousel-container {
+                width: 95%;
+                height: 40vh;
+                margin-top: 10px;
+            }
+
+            .carousel-item img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+
+            .description-rating {
+                max-width: 100%;
+                margin-top: 20px;
+            }
+        }
+
+        .description-rating {
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            max-width: 90%;
+            margin: auto;
+        }
+
+        .product-options,
+        .action-buttons {
+            padding-top: 10px;
+        }
+
+        .action-buttons button {
+            min-width: 30%;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 767px) {
+            .carousel-container {
+                width: 95%;
+                height: 40vh;
+            }
+
+            .carousel-item img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+
+            .description-rating {
+                max-width: 100%;
+                padding: 10px;
+            }
+        }
+    </style>
+
+
+
+    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);margin-top: 70px; margin-left: 20px;"
+        aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/user/home">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Ordering</li>
+        </ol>
+    </nav>
+
+
+
+
+
+    {{!-- <div class="container-fluid vh-100 d-flex justify-content-center align-items-center">
+        <div class="carousel-container" style="width: 90%; height: 90%;">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade shadow-lg"
+                style="border-radius: 15px; overflow: hidden; height: 100%;">
+                <div class="carousel-inner h-100">
+                    <div class="carousel-item active">
+                        <div class="zoom-container">
+                            <img src="/{{product.image.[0]}}" class="d-block w-100 h-100 zoom-image" alt="Image 1"
+                                style="object-fit: cover;">
+                            <div class="zoom-overlay"></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="zoom-container">
+                            <img src="/{{product.image.[1]}}" class="d-block w-100 h-100 zoom-image" alt="Image 2"
+                                style="object-fit: cover;">
+                            <div class="zoom-overlay"></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="zoom-container">
+                            <img src="/{{product.image.[2]}}" class="d-block w-100 h-100 zoom-image" alt="Image 3"
+                                style="object-fit: cover;">
+                            <div class="zoom-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div> --}}
+
+
+   <div class="container-fluid vh-100 d-flex justify-content-center align-items-center">
+    <div class="carousel-container" style="width: 70%; height: 70%;">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade shadow-lg"
+            style="border-radius: 15px; overflow: hidden; height: 100%; background-color: #f8f9fa;">
+            <div class="carousel-inner h-100">
+                <div class="carousel-item active">
+                    <div class="zoom-container d-flex justify-content-center align-items-center" style="height: 100%;">
+                        <img src="/{{product.image.[0]}}" class="zoom-image"
+                            alt="Image 1"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="zoom-container d-flex justify-content-center align-items-center" style="height: 100%;">
+                        <img src="/{{product.image.[1]}}" class="zoom-image"
+                            alt="Image 2"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="zoom-container d-flex justify-content-center align-items-center" style="height: 100%;">
+                        <img src="/{{product.image.[2]}}" class="zoom-image"
+                            alt="Image 3"
+                            style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+    <style>
+        .zoom-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .zoom-overlay {
+            position: absolute;
+            display: none;
+            width: 300px;
+            height: 300px;
+            background-repeat: no-repeat;
+            border: 1px solid #ddd;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            cursor: zoom-in;
+            z-index: 10;
+        }
+    </style>
+
+    <script>
+        document.querySelectorAll('.zoom-container').forEach(container => {
+            const overlay = container.querySelector('.zoom-overlay');
+            const img = container.querySelector('.zoom-image');
+
+            container.addEventListener('mousemove', (e) => {
+                const rect = container.getBoundingClientRect();
+                const xPos = e.clientX - rect.left;
+                const yPos = e.clientY - rect.top;
+
+                overlay.style.display = 'block';
+                overlay.style.left = `${xPos - overlay.offsetWidth / 2}px`;
+                overlay.style.top = `${yPos - overlay.offsetHeight / 2}px`;
+
+
+                overlay.style.backgroundImage = `url(${img.src})`;
+                overlay.style.backgroundSize = `${img.width * 2}px ${img.height * 2}px`;
+                overlay.style.backgroundPosition = `-${xPos * 2}px -${yPos * 2}px`;
+            });
+
+            container.addEventListener('mouseleave', () => {
+                overlay.style.display = 'none';
+            });
+        });
+
+    </script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.rawgit.com/igorlino/elevatezoom-plus/1.1.6/src/jquery.ez-plus.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.16/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.16/dist/sweetalert2.all.min.js"></script>
+
+
+
+    <div id="magnifier" class="magnifier" style="display: none;"></div>
+    </div>
+    </div>
+
+    <style>
+        .magnifier {
+            position: absolute;
+            /* Position it absolutely */
+            border: 2px solid #ccc;
+            /* Border style */
+            width: 150px;
+            /* Size of the magnifier */
+            height: 150px;
+            /* Size of the magnifier */
+            overflow: hidden;
+            /* Hide overflow */
+            pointer-events: none;
+            /* Prevent interference with mouse events */
+            display: none;
+            /* Initially hidden */
+            z-index: 1000;
+            /* On top */
+            background: rgba(255, 255, 255, 0.7);
+            /* Optional: add a semi-transparent background */
+            border-radius: 10px;
+            /* Optional: round the corners */
+        }
+
+        .magnifier img {
+            position: absolute;
+            /* Position the zoomed image */
+            transform: scale(2);
+            /* Scale the image */
+            top: -50%;
+            /* Adjust the position */
+            left: -50%;
+            /* Adjust the position */
+            width: auto;
+            /* Maintain aspect ratio */
+        }
+    </style>
+
+
+
+    <p class="h3 text-center">{{product.name}}</p>
+
+
+    <div class="description-rating mt-4 text-center">
+        <h5 style="color: green;">
+            <p>{{product.status}}</p>
+        </h5>
+        <!-- Description Section -->
+        <div class="description mb-3">
+            <h4>Product Description</h4>
+            <i>{{product.discription}}</i>
+        </div>
+
+        <!-- Rating Section -->
+        <div class="rating mb-3">
+            <h5>Rating</h5>
+            <div class="stars">
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9733;</span>
+                <span>&#9734;</span> <!-- Example rating with 4 out of 5 stars -->
+            </div>
+        </div>
+
+
+        <div class="product-options">
+
+            <div class="total-price mb-3">
+                <h5>Total Price</h5>
+                <p><strong>₹{{product.regularprice}}</strong></p>
+            </div>
+
+            <!-- Select Color -->
+            <div class="color-selection mb-3">
+
+                <h5>Color</h5>
+                <p>{{product.color}}</p>
+
+                <h4>Category</h4>
+                <p>{{product.category.categoryname}}</p>
+
+                <h4>Brand</h4>
+                <p>{{product.brand}}</p>
+                <i>4 years trusted company from Time Haven</i>
+            </div>
+        </div>
+
+        <!-- Quantity Selection -->
+        <div class="d-flex justify-content-center">
+            <label for="quantity">Quantity:</label>
+            <div style="display: flex; align-items: center; margin-left: 10px;">
+                <button type="button" onclick="decreaseQuantity()"
+                    style="width: 30px; height: 30px; border: none; background-color: #ddd; cursor: pointer; font-size: 18px;">-</button>
+
+                <input type="number" id="quantity" name="displayQuantity" value="1" min="1" max="8"
+                    style="width: 50px; text-align: center; margin: 0 5px; font-size: 16px; border: 1px solid #ddd;"
+                    onchange="updateHiddenQuantity()">
+
+                <button type="button" onclick="increaseQuantity()"
+                    style="width: 30px; height: 30px; border: none; background-color: #ddd; cursor: pointer; font-size: 18px;">+</button>
+            </div>
+        </div>
+        <input type="hidden" value="{{product.quantity}}" id="qty">
+        <div class="d-flex gap-2 mt-4 align-items-center justify-content-center">
+            <!-- Wishlist Form -->
+            {{!-- <form action="/user/addtowishlist/{{product.id}}" method="post"> --}}
+                <input type="hidden" value="{{product.id}}" id="productId">
+                <button type="button" id="addtowishlist" class="btn btn-danger d-flex align-items-center">
+                    <i class="bi bi-heart me-2"></i> Add to Wishlist
+                </button>
+                {{!--
+            </form> --}}
+
+            <!-- Add to Cart Form -->
+            <form action="/user/addcart/{{product.id}}/{{userid}}" method="post" onsubmit="updateHiddenQuantity()">
+                <input type="hidden" value="{{product.regularprice}}" name="regularprice">
+                <input type="hidden" id="hiddenQuantity" name="quantity" value="1">
+
+                <button type="submit" class="btn btn-primary d-flex align-items-center">
+                    <i class="bi bi-cart me-2"></i> Add to Cart
+                </button>
+            </form>
+        </div>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
+        {{!-- <div class="d-flex justify-content-around align-items-center mt-4">
+            <form action="/user/addtowishlist" method="post">
+                <button type="submit" class="btn btn-danger d-flex align-items-center">
+                    <i class="fas fa-heart me-2"></i> Add to Wishlist
+                </button>
+            </form>
+
+            <form action="/user/addcart/{{product.id}}/{{userid}}" method="post" onsubmit="updateHiddenQuantity()">
+                <input type="hidden" value="{{product.regularprice}}" name="regularprice">
+                <input type="hidden" id="hiddenQuantity" name="quantity" value="1">
+
+                <button type="submit" class="btn btn-primary d-flex align-items-center">
+                    <i class="fas fa-shopping-cart me-2"></i> Add to Cart
+                </button>
+            </form>
+        </div> --}}
+
+    </div>
+    <script>
+        document.getElementById('addtowishlist').addEventListener('click', async function () {
+            const product = document.getElementById('productId').value;
+
+            const response = await fetch('/user/addtowishlist', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+
+                    productId: product
+                })
+
+            });
+            if (response.ok) {
+                console.log('aded in that ')
+                Swal.fire({
+                    icon: 'success',
+                    title: 'success',
+                    text: 'successfully added to the wishlist',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            } else {
+                const res = await response.text()
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'warning',
+                    text: res
+                })
+            }
+        })
+    </script>
+
+    <script>
+        const quantityInput = document.getElementById('quantity');
+        const hiddenQuantityInput = document.getElementById('hiddenQuantity');
+
+        function increaseQuantity() {
+            const currentQuantity = parseInt(quantityInput.value);
+            if (currentQuantity < 8) {
+                quantityInput.value = currentQuantity + 1;
+                updateHiddenQuantity();
+            } else {
+                Swal.fire({
+                    title: 'Limit',
+                    text: 'You can’t select more than 8 items',
+                    icon: 'warning',
+                    confirmButtonText: 'OK',
+                });
+            }
+        }
+
+        function decreaseQuantity() {
+            const currentQuantity = parseInt(quantityInput.value);
+            if (currentQuantity > 1) {
+                quantityInput.value = currentQuantity - 1;
+                updateHiddenQuantity();
+            } else {
+                Swal.fire({
+                    title: 'Limit',
+                    text: 'Select at least one item.',
+                    icon: 'warning',
+                    confirmButtonText: 'OK',
+                });
+            }
+        }
+
+        function updateHiddenQuantity() {
+            const stock = parseInt(document.getElementById('qty').value); // Convert to number
+            const quantity = parseInt(quantityInput.value); // Convert to number
+
+            if (quantity > 8) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Warning',
+                    text: 'you cant buy items more than 8'
+                })
+                hiddenQuantityInput.value = ''; // Reset to prevent invalid data
+                return false;
+            }
+            if (quantity <= 0) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Warning',
+                    text: 'Enter a valid qty'
+                })
+                hiddenQuantityInput.value = ''; // Reset to prevent invalid data
+                return false;
+            }
+            if (quantity > stock) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Warning',
+                    text: 'Out of stock'
+                })
+                hiddenQuantityInput.value = ''; // Reset to prevent invalid data
+                return false;
+            } else {
+                hiddenQuantityInput.value = quantity; // Assign the valid quantity
+                return true; // Validation successful
+            }
+        }
+
+        document.querySelector('form').addEventListener('submit', function (event) {
+            const isValid = updateHiddenQuantity(); // Check quantity before submission
+
+            if (!isValid) {
+                event.preventDefault(); // Stop form submission if validation fails
+            }
+        });
+
+    </script>
+
+    <style>
+        .action-buttons button {
+            min-width: 30%;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .action-buttons button i {
+            font-size: 1.2em;
+        }
+
+        .action-buttons button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+    </div>
+
+
+
+
+
+
+    <div class="review-section mt-4">
+        <h4>User Reviews</h4>
+        <div class="reviews mb-3">
+            <div class="review mb-2">
+                <strong>John Doe</strong>
+                <div class="stars">
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9734;</span> <!-- 4 out of 5 stars -->
+                </div>
+                <p>This watch is amazing! The design is stunning, and it fits perfectly.</p>
+            </div>
+            <div class="review mb-2">
+                <strong>Jane Smith</strong>
+                <div class="stars">
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9733;</span>
+                    <span>&#9734;</span> <!-- 4 out of 5 stars -->
+                </div>
+                <p>Great quality for the price. I highly recommend it!</p>
+            </div>
+            <!-- More reviews can be added here -->
+        </div>
+
+        <div class="add-review">
+            <h5>Leave a Review</h5>
+            <form>
+                <div class="mb-3">
+                    <label for="reviewerName" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="reviewerName" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="reviewText" class="form-label">Your Review</label>
+                    <textarea class="form-control" id="reviewText" rows="3" placeholder="Write your review"
+                        required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Rating</label>
+                    <div class="stars">
+                        <span class="rating-star" data-value="1">&#9733;</span>
+                        <span class="rating-star" data-value="2">&#9733;</span>
+                        <span class="rating-star" data-value="3">&#9733;</span>
+                        <span class="rating-star" data-value="4">&#9733;</span>
+                        <span class="rating-star" data-value="5">&#9734;</span>
+                    </div>
+                    <input type="hidden" id="ratingValue" value="0">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Review</button>
+            </form>
+        </div>
+    </div>
+
+
+    <style>
+        .review-section h4,
+        .review-section h5 {
+            margin-bottom: 10px;
+        }
+
+        .reviews {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+
+        .review {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+
+        .review:last-child {
+            border-bottom: none;
+        }
+
+        .stars {
+            color: gold;
+        }
+
+        .add-review {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+        }
+
+        .add-review .form-label {
+            margin-bottom: 5px;
+        }
+
+        .rating-star {
+            cursor: pointer;
+            font-size: 1.5em;
+            color: gold;
+        }
+
+        .rating-star:hover {
+            color: darkorange;
+        }
+    </style>
+
+    <script>
+        document.querySelectorAll('.rating-star').forEach(star => {
+            star.addEventListener('click', function () {
+                const ratingValue = this.getAttribute('data-value');
+                document.getElementById('ratingValue').value = ratingValue;
+
+
+                document.querySelectorAll('.rating-star').forEach((s, index) => {
+                    s.innerHTML = index < ratingValue ? '&#9733;' : '&#9734;';
+                });
+            });
+        });
+
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.js"></script>
+
+    <footer class="bg-dark text-white mt-3 ">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>TimeHaven is your go-to destination for stylish and affordable watches. We believe in offering
+                        quality products with exceptional service.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Customer Service</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-white">Returns</a></li>
+                        <li><a href="#" class="text-white">Shipping Information</a></li>
+                        <li><a href="#" class="text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <ul class="list-unstyled d-flex">
+                        <li class="me-3">
+                            <a href="#" class="text-white">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="me-3">
+                            <a href="#" class="text-white">
+                                <i class="bi bi-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="me-3">
+                            <a href="#" class="text-white">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-white">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-white">
+            <div class="text-center">
+                <p>&copy; 2024 TimeHaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
