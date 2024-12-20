@@ -19,7 +19,9 @@ const upload = multer({ storage: storage }).fields([
     { name: 'image3', maxCount: 1 }
 ]);
 
-
+// added new lines from the practice 2
 module.exports = upload;
+ 
 
 // uploaded some new lines 
+ 
