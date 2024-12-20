@@ -21,3 +21,4 @@ const upload = multer({ storage: storage }).fields([
 
 // added new lines from the practice 2
 module.exports = upload;
+// added new lines from the paracticee 3
